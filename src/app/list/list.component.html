@@ -1,36 +1,3 @@
 <h1>
   <span>Movies List</span>
 </h1>
-<app-search [movies]="movies" (filteredMovies)="filteredMovies = $event"></app-search>
-<div class="col-xs-3">
-  <select class="form-control" id="category" name="category" [(ngModel)]="selectedCategory" required>
-    <option value="">All</option>
-    <option *ngFor="let category of categories" [value]="category.Id">{{category.Name}}</option>
-  </select>
-</div>
-<button class="btn btn-primary col-xs-2 col-xs-offset-3" routerLink="/create"><i class="glyphicon glyphicon-plus"></i>Add new movie</button>
-<div class="movies-list">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th class="col-xs-3">Title</th>
-        <th class="col-xs-5">Description</th>
-        <th class="col-xs-2">Category</th>
-        <th class="col-xs-2">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr list-item *ngFor="let movie of filteredMovies | filterByCategory:selectedCategory" [movie]="movie" (delete)="onDelete($event)"></tr>
-      <!--<tr *ngFor="let movie of filteredMovies | filterByCategory:selectedCategory">
-        <td class="col-xs-3">{{movie.Title}}</td>
-        <td class="col-xs-5">{{movie.Description | limitTo:80}}</td>
-        <td class="col-xs-2">{{movie.Category.Name}}</td>
-        <td class="col-xs-2">
-          <button class="btn" routerLink="/details/{{movie.Id}}"><i class="glyphicon glyphicon-eye-open"></i></button>
-          <button class="btn btn-default" routerLink="/edit/{{movie.Id}}"><i class="glyphicon glyphicon-pencil"></i></button>
-          <button class="btn btn-danger" (click)="onDelete(movie.Id)"><i class="glyphicon glyphicon-trash"></i></button>
-        </td>
-      </tr>-->
-    </tbody>
-  </table>
-</div>
