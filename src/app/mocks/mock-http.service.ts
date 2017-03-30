@@ -22,7 +22,7 @@ export class MockHttpService {
   movies: MovieModel[];
   lastId: number = 0;
 
-  constructor(backend, options) {
+  constructor() {
     this.movies = movies;
     this.movies.map(movie => {
       if (this.lastId < movie.Id) {

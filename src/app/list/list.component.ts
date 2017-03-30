@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { MovieModel } from '../models/movie.model';
 import { CategoryEnum } from '../enums/category.enum';
 import { CategoryModel } from '../models/category.model';
-import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-list',
@@ -23,8 +22,8 @@ export class ListComponent implements OnInit {
     "Category": {"Name":"Action", "Id": 0}
   }];
   
-  constructor(private service: ApiService) { }
+  constructor() { }
 
-  ngOnInit() {    
+  ngOnInit() {
   }
 }

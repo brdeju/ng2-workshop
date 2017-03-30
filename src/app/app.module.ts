@@ -1,18 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
-import { MockBackend } from '@angular/http/testing';
+import { HttpModule, Http } from '@angular/http';
 
+import { MockHttpService } from './mocks/mock-http.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { LimitToPipe } from './pipes/limit-to.pipe';
-import { MockHttpService } from './mocks/mock-http.service';
-import { ApiService } from './api.service';
 
-export function mockFactory(backend, options) {
-  return new MockHttpService(backend, options);
+export function mockFactory() {
+  return new MockHttpService();
 }
 
 @NgModule({
@@ -28,13 +26,9 @@ export function mockFactory(backend, options) {
     AppRoutingModule
   ],
   providers: [
-    ApiService,
-    MockBackend,
-    BaseRequestOptions,
     {
       provide: Http, 
-      useFactory: mockFactory, 
-      deps: [MockBackend, BaseRequestOptions]
+      useFactory: mockFactory
     }
   ],
   bootstrap: [AppComponent]
