@@ -1,0 +1,12 @@
+<h1>Movie details</h1>
+<div>
+    <p>Title: {{movie.Title}}</p>
+    <p>Description: {{movie.Description}}</p>
+    <p>Category: {{movie.Category.Name}}</p>
+    <br/>
+    <br/>
+    <div class="pull-right">
+        <button class="btn" routerLink="/list">Back</button>
+        <button class="btn btn-primary" routerLink="/edit/{{movie.Id}}">Edit</button>
+    </div>
+</div>
