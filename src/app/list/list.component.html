@@ -1,3 +1,21 @@
 <h1>
   <span>Movies List</span>
 </h1>
+<h2>
+<div class="col-lg-12">
+  <div class="col-lg-3 ">
+    Title
+    </div>
+   <div class="col-lg-3">
+    Description
+    </div>
+     <div class="col-lg-3">
+      Category
+    </div>
+    <div class="col-lg-3">
+      Actions
+    </div>
+</div>
+</h2>
+<app-element-list *ngFor="let movie of _movies" [movie] = "movie" (deletedId) = "OnDelete($event)">
+</app-element-list>

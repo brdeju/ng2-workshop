@@ -15,4 +15,15 @@ export class ApiService {
     return this.http.get('movies')
       .map(response => response.json());
   }
+
+  getMovieById(movieId: number): Observable<MovieModel> 
+  {
+    return this.http.get(`movies/${movieId}`)
+        .map(response => response.json());
+  }
+
+  deleteMovie(movieId: number): Observable<MovieModel[]> {
+    return this.http.delete(`movies/${movieId}`)
+      .map(response => response.json());
+  }
 }

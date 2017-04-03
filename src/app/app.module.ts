@@ -8,6 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { LimitToPipe } from './pipes/limit-to.pipe';
+import { ElementListComponent } from './element-list/element-list.component';
+import { ApiService } from './api.service';
+import { ElementDetailsComponent } from './element-details/element-details.component';
+import { ElementEditComponent } from './element-edit/element-edit.component';
 
 export function mockFactory() {
   return new MockHttpService();
@@ -17,7 +21,10 @@ export function mockFactory() {
   declarations: [
     AppComponent,
     ListComponent,
-    LimitToPipe
+    LimitToPipe,
+    ElementListComponent,
+    ElementDetailsComponent,
+    ElementEditComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,7 @@ export function mockFactory() {
     {
       provide: Http, 
       useFactory: mockFactory
-    }
+    }, ApiService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,22 @@
+<h1>
+  Edit movie details
+</h1>
+<div *ngIf="movie">
+<div>
+  Title:
+</div>
+<input type="text" [(ngModel)]="movie.Title" />
+<div>
+  Description:
+    <input type="text" [(ngModel)]="movie.Description" />
+    </div>
+<div>
+  Category: 
+  <select [(ngModel)]="movie.Category.Name"></select>
+</div>
+</div>
+
+<div class="btn-group">
+  <button>Back</button>
+  <button routerLink="">Edit</button>
+  </div>

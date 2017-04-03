@@ -1,0 +1,16 @@
+<div class="col-lg-12">
+  <div class="col-lg-3">
+    {{movie.Title}}
+    </div>
+   <div class="col-lg-3">
+    {{movie.Description | limitTo:100}}
+    </div>
+     <div class="col-lg-3">
+    {{movie.Category.Name}}
+    </div>
+    <div>
+      <button class="glyphicon glyphicon-eye-open" routerLink="/details/{{movie.Id}}"></button>
+      <button class="glyphicon glyphicon-pencil" routerLink="/edit/{{movie.Id}}"></button>
+      <button class="glyphicon glyphicon-trash" (click)="Delete()"></button>
+    </div>
+</div>
